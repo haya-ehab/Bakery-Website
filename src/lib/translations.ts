@@ -19,6 +19,7 @@ export const translations = {
     // Menu Page
     menuTitle: 'Menu',
     addToCart: 'Add to Cart',
+    addedToCart: 'Added to cart',
     menuSections: {
       croissants: 'Croissants & Pastries',
       sandwiches: 'Sandwiches',
@@ -108,6 +109,7 @@ export const translations = {
     checkout: 'Checkout',
     emptyCart: 'Your cart is empty',
     remove: 'Remove',
+    continueShopping: 'Continue Shopping',
   },
   ar: {
     // Navigation
@@ -129,6 +131,7 @@ export const translations = {
     // Menu Page
     menuTitle: 'القائمة',
     addToCart: 'أضف إلى السلة',
+    addedToCart: 'تمت الإضافة إلى السلة',
     menuSections: {
       croissants: 'الكرواسون والمعجنات',
       sandwiches: 'السندويتشات',
@@ -218,5 +221,6 @@ export const translations = {
     checkout: 'إتمام الشراء',
     emptyCart: 'سلة المشتريات فارغة',
     remove: 'حذف',
+    continueShopping: 'متابعة التسوق',
   }
 }; 

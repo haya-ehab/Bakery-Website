@@ -21,6 +21,10 @@ interface MenuSection {
   products: Product[];
 }
 
+interface MenuProps {
+  onNavigate: (page: 'home' | 'menu' | 'about' | 'contact') => void;
+}
+
 const menuSections: MenuSection[] = [
   {
     name: 'croissants',
@@ -288,56 +292,88 @@ const menuSections: MenuSection[] = [
   },
 ];
 
-const Menu = () => {
-  const [openSection, setOpenSection] = useState<number | null>(null);
+const Menu = ({ onNavigate }: MenuProps) => {
   const { addToCart } = useCart();
   const { language } = useLanguage();
   const t = translations[language];
+  const [selectedSection, setSelectedSection] = useState<MenuSectionName | null>(null);
 
   const handleAddToCart = (product: Product) => {
     addToCart(product);
-    toast.success(`${t.menuItems[product.name]} ${t.addToCart}`);
+    toast.success(t.addedToCart);
   };
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold text-bakery-brown mb-12 text-center">{t.menuTitle}</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {menuSections.map((section, idx) => (
-          <Dialog.Root key={section.name} open={openSection === idx} onOpenChange={open => setOpenSection(open ? idx : null)}>
-            <Dialog.Trigger asChild>
-              <button className="flex flex-col items-center w-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-4 focus:outline-none transform hover:scale-105 active:scale-95 duration-200 group">
-                <img src={section.image} alt={t.menuSections[section.name]} className="w-full h-40 object-cover rounded-lg mb-4 group-hover:opacity-90 transition-opacity duration-200" />
-                <span className="text-lg font-bold text-bakery-brown mb-2 group-hover:text-bakery-pink transition-colors duration-200">{t.menuSections[section.name]}</span>
-              </button>
-            </Dialog.Trigger>
-            <Dialog.Portal>
-              <Dialog.Overlay className="fixed inset-0 bg-black/40 z-50" />
-              <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-2xl p-8 focus:outline-none">
-                <Dialog.Title className="text-2xl font-bold text-bakery-brown mb-6 text-center">{t.menuSections[section.name]}</Dialog.Title>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {section.products.map(product => (
-                    <div key={product.id} className="flex flex-col items-center bg-bakery-cream rounded-lg p-4 shadow hover:shadow-lg transition-shadow duration-200 transform hover:scale-105 active:scale-95">
-                      <img src={product.image} alt={t.menuItems[product.name]} className="w-28 h-28 object-cover rounded mb-2" />
-                      <h3 className="font-bold text-bakery-brown mb-1">{t.menuItems[product.name]}</h3>
-                      <p className="text-bakery-brown mb-2">${product.price.toFixed(2)}</p>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-bakery-brown">
+        {t.menuTitle}
+      </h1>
+
+      {/* Menu Sections Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
+        {menuSections.map((section) => (
+          <button
+            key={section.name}
+            onClick={() => setSelectedSection(section.name)}
+            className={`relative group overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02] ${
+              selectedSection === section.name ? 'ring-2 ring-bakery-pink' : ''
+            }`}
+          >
+            <img
+              src={section.image}
+              alt={t.menuSections[section.name]}
+              className="w-full h-48 sm:h-56 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+            <h2 className="absolute bottom-4 left-4 text-xl sm:text-2xl font-bold text-white">
+              {t.menuSections[section.name]}
+            </h2>
+          </button>
+        ))}
+      </div>
+
+      {/* Products Grid */}
+      {selectedSection && (
+        <div className="mt-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-bakery-brown">
+            {t.menuSections[selectedSection]}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+            {menuSections
+              .find((section) => section.name === selectedSection)
+              ?.products.map((product) => (
+                <div
+                  key={product.id}
+                  className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+                >
+                  <div className="relative aspect-square">
+                    <img
+                      src={product.image}
+                      alt={t.menuItems[product.name]}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+                      {t.menuItems[product.name]}
+                    </h3>
+                    <div className="flex justify-between items-center">
+                      <span className="text-lg font-bold text-bakery-brown">
+                        ${product.price.toFixed(2)}
+                      </span>
                       <button
-                        className="bg-bakery-brown text-white px-4 py-2 rounded hover:bg-bakery-pink transition-colors duration-200 hover:scale-105 active:scale-95"
                         onClick={() => handleAddToCart(product)}
+                        className="px-4 py-2 bg-bakery-pink text-white rounded-full hover:bg-bakery-pink/90 transition-colors text-sm sm:text-base"
                       >
                         {t.addToCart}
                       </button>
                     </div>
-                  ))}
+                  </div>
                 </div>
-                <Dialog.Close asChild>
-                  <button className="absolute top-4 right-4 text-bakery-brown text-2xl font-bold">&times;</button>
-                </Dialog.Close>
-              </Dialog.Content>
-            </Dialog.Portal>
-          </Dialog.Root>
-        ))}
-      </div>
+              ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
