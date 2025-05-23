@@ -1,4 +1,3 @@
-import React from 'react';
 import { bakeryImages } from '../assets/demoImages'
 import { motion } from 'framer-motion';
 import { useLanguage } from '../lib/LanguageContext';
@@ -85,7 +84,7 @@ const About = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            {Object.entries(t.values).map(([key, value], index) => (
+            {Object.entries(t.values).map(([, value], index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
