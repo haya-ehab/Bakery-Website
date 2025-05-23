@@ -1,16 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { ShoppingCart } from 'lucide-react'
 import { useCart } from '../../lib/CartContext'
 import { useLanguage } from '../../lib/LanguageContext'
 import { translations } from '../../lib/translations'
 
 interface HeaderProps {
-  isCartOpen: boolean
-  setIsCartOpen: (open: boolean) => void
+  onNavigate: (page: 'home' | 'menu' | 'about' | 'contact') => void
 }
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
   const { items } = useCart()
   const { language } = useLanguage()
   const t = translations[language]
@@ -20,25 +18,23 @@ const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-bakery-cream/95 backdrop-blur supports-[backdrop-filter]:bg-bakery-cream/60 transition-shadow duration-300 shadow-sm">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="text-2xl font-bold text-bakery-brown hover:scale-105 transition-transform duration-200">
+        <button onClick={() => onNavigate('home')} className="text-2xl font-bold text-bakery-brown hover:scale-105 transition-transform duration-200 bg-transparent border-none cursor-pointer">
           Sweet Delights
-        </Link>
-        
+        </button>
         <nav className="hidden md:flex gap-6">
-          <Link to="/" className="text-bakery-brown hover:text-bakery-pink transition-colors duration-200 hover:scale-105">
+          <button onClick={() => onNavigate('home')} className="text-bakery-brown hover:text-bakery-pink transition-colors duration-200 hover:scale-105 bg-transparent border-none cursor-pointer">
             {t.home}
-          </Link>
-          <Link to="/menu" className="text-bakery-brown hover:text-bakery-pink transition-colors duration-200 hover:scale-105">
+          </button>
+          <button onClick={() => onNavigate('menu')} className="text-bakery-brown hover:text-bakery-pink transition-colors duration-200 hover:scale-105 bg-transparent border-none cursor-pointer">
             {t.menu}
-          </Link>
-          <Link to="/about" className="text-bakery-brown hover:text-bakery-pink transition-colors duration-200 hover:scale-105">
+          </button>
+          <button onClick={() => onNavigate('about')} className="text-bakery-brown hover:text-bakery-pink transition-colors duration-200 hover:scale-105 bg-transparent border-none cursor-pointer">
             {t.about}
-          </Link>
-          <Link to="/contact" className="text-bakery-brown hover:text-bakery-pink transition-colors duration-200 hover:scale-105">
+          </button>
+          <button onClick={() => onNavigate('contact')} className="text-bakery-brown hover:text-bakery-pink transition-colors duration-200 hover:scale-105 bg-transparent border-none cursor-pointer">
             {t.contact}
-          </Link>
+          </button>
         </nav>
-
         <button
           className={`relative p-2 rounded-full transition-all duration-200 hover:bg-bakery-pink/30 active:scale-95 ${totalItems > 0 ? 'bg-bakery-pink/40 scale-110' : ''}`}
           aria-label="Toggle cart"
