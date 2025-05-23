@@ -4,18 +4,18 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 interface ContactProps {
-  onNavigate: (page: 'home' | 'menu' | 'about' | 'contact') => void;
+  // onNavigate: (page: 'home' | 'menu' | 'about' | 'contact') => void;
 }
 
-const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
+const Contact: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
+  // const fadeInUp = {
+  //   initial: { opacity: 0, y: 20 },
+  //   animate: { opacity: 1, y: 0 },
+  //   transition: { duration: 0.6 }
+  // };
 
   return (
     <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">

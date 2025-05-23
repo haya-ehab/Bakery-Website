@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { Toaster } from "react-hot-toast"
 import Header from "./components/layout/Header"
 import Footer from "./components/layout/Footer"

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as Dialog from '@radix-ui/react-dialog';
+// import * as Dialog from '@radix-ui/react-dialog';
 import { useCart } from '../lib/CartContext';
 import { toast } from 'react-hot-toast';
 import { useLanguage } from '../lib/LanguageContext';
@@ -19,10 +19,6 @@ interface MenuSection {
   name: MenuSectionName;
   image: string;
   products: Product[];
-}
-
-interface MenuProps {
-  onNavigate: (page: 'home' | 'menu' | 'about' | 'contact') => void;
 }
 
 const menuSections: MenuSection[] = [
@@ -292,7 +288,7 @@ const menuSections: MenuSection[] = [
   },
 ];
 
-const Menu = ({ onNavigate }: MenuProps) => {
+const Menu = () => {
   const { addToCart } = useCart();
   const { language } = useLanguage();
   const t = translations[language];

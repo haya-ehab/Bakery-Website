@@ -4,10 +4,10 @@ import { useLanguage } from '../lib/LanguageContext';
 import { translations } from '../lib/translations';
 
 interface AboutProps {
-  onNavigate: (page: 'home' | 'menu' | 'about' | 'contact') => void;
+  // onNavigate: (page: 'home' | 'menu' | 'about' | 'contact') => void;
 }
 
-const About: React.FC<AboutProps> = ({ onNavigate }) => {
+const About: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
