@@ -1,5 +1,3 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '../lib/LanguageContext';
 import { translations } from '../lib/translations';
 
@@ -21,12 +19,12 @@ const Home: React.FC = () => {
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">{t.heroTitle}</h1>
           <p className="text-xl md:text-2xl mb-8">{t.heroSubtitle}</p>
-          <Link
-            to="/menu"
+          <button
             className="bg-pink-500 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-pink-600 transition-colors"
+            // onClick={() => ...} // You can wire this to your navigation if needed
           >
             {t.shopNow}
-          </Link>
+          </button>
         </div>
       </section>
 
