@@ -26,9 +26,9 @@ const App = () => {
           <Header onNavigate={setPage} onCartToggle={toggleCart} />
           <main className="container mx-auto px-4 py-8">
             {page === "home" && <Home onNavigate={setPage} />}
-            {page === "menu" && <Menu onNavigate={setPage} />}
-            {page === "about" && <About onNavigate={setPage} />}
-            {page === "contact" && <Contact onNavigate={setPage} />}
+            {page === "menu" && <Menu />}
+            {page === "about" && <About />}
+            {page === "contact" && <Contact />}
           </main>
           <Footer />
           <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />

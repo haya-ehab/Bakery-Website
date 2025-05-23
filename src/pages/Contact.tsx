@@ -3,10 +3,6 @@ import { translations } from '../lib/translations';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
-interface ContactProps {
-  // onNavigate: (page: 'home' | 'menu' | 'about' | 'contact') => void;
-}
-
 const Contact: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
