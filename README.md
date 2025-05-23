@@ -15,7 +15,6 @@ A modern, responsive bakery website built with React and TypeScript. Features in
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-- React Router
 - React Hot Toast
 
 ## Getting Started
