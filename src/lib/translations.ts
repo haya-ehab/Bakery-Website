@@ -1,0 +1,222 @@
+export const translations = {
+  en: {
+    // Navigation
+    home: 'Home',
+    menu: 'Menu',
+    about: 'About',
+    contact: 'Contact',
+    cart: 'Cart',
+    
+    // Home Page
+    heroTitle: 'Freshly Baked Delights',
+    heroSubtitle: 'Discover our artisanal selection of handcrafted pastries, breads, and cakes',
+    shopNow: 'Shop Now',
+    featuredCategories: 'Featured Categories',
+    cakes: 'Cakes',
+    pastries: 'Pastries',
+    coffee: 'Coffee',
+    
+    // Menu Page
+    menuTitle: 'Menu',
+    addToCart: 'Add to Cart',
+    menuSections: {
+      croissants: 'Croissants & Pastries',
+      sandwiches: 'Sandwiches',
+      wraps: 'Wraps',
+      panzini: 'Panzini',
+      breads: 'Breads',
+      cakes: 'Cakes & Desserts',
+      softDrinks: 'Soft Drinks',
+      hotDrinks: 'Hot Drinks',
+      coldDrinks: 'Cold Drinks',
+      coffee: 'Coffee',
+      freshJuices: 'Fresh Juices'
+    },
+    menuItems: {
+      chocolateCroissant: 'Chocolate Croissant',
+      almondDanish: 'Almond Danish',
+      butterCroissant: 'Butter Croissant',
+      raspberryDanish: 'Raspberry Danish',
+      turkeyClub: 'Turkey Club Sandwich',
+      hamCheese: 'Ham & Cheese Sandwich',
+      veggieSandwich: 'Veggie Sandwich',
+      chickenCaesarWrap: 'Chicken Caesar Wrap',
+      falafelWrap: 'Falafel Wrap',
+      tunaWrap: 'Tuna Salad Wrap',
+      classicPanzini: 'Classic Panzini',
+      cheesePanzini: 'Cheese Panzini',
+      sourdough: 'Classic Sourdough',
+      wholeWheat: 'Whole Wheat Loaf',
+      baguette: 'Baguette',
+      strawberryCake: 'Strawberry Cake',
+      chocolateMousse: 'Chocolate Mousse',
+      lemonTart: 'Lemon Tart',
+      cola: 'v7 Cola',
+      lemonade: 'Lemonade',
+      gingerAle: 'Ginger Ale',
+      hotChocolate: 'Hot Chocolate',
+      herbalTea: 'Herbal Tea',
+      icedLatte: 'Iced Latte',
+      icedCoffee: 'Iced Coffee',
+      icedMocha: 'Iced Mocha',
+      espressoCapsules: 'Espresso Capsules',
+      chocolateCoffee: 'Chocolate Coffee',
+      turkishCoffee: 'Turkish Coffee',
+      frenchCoffee: 'French Coffee',
+      orangeJuice: 'Fresh Orange Juice',
+      watermelonJuice: 'Watermelon Juice',
+      lemonSparkling: 'Lemon Sparkling Water'
+    },
+    
+    // About Page
+    aboutTitle: 'About Sweet Delights',
+    ourStory: 'Our Story',
+    ourValues: 'Our Values',
+    ourTeam: 'Our Team',
+    ourPromise: 'Our Promise',
+    storyContent: 'At Sweet Delights, we believe in the art of traditional baking combined with modern creativity. Our master bakers craft each item with love and attention to detail, using only the finest ingredients.',
+    values: {
+      quality: 'Quality Ingredients',
+      traditional: 'Traditional Methods',
+      community: 'Community Focus',
+      sustainability: 'Sustainability'
+    },
+    teamContent: 'Our team of experienced bakers and pastry chefs brings years of expertise and passion to create the perfect treats for you.',
+    promises: [
+      'Fresh, high-quality ingredients',
+      'Traditional baking methods',
+      'Exceptional customer service',
+      'Community involvement'
+    ],
+    
+    // Contact Page
+    contactTitle: 'Contact Us',
+    getInTouch: 'Get in Touch',
+    sendMessage: 'Send us a Message',
+    name: 'Name',
+    email: 'Email',
+    message: 'Message',
+    send: 'Send Message',
+    address: '123 Bakery Street, Sweet City',
+    phone: '+1 234 567 890',
+    emailContact: 'contact@sweetdelights.com',
+    hours: 'Open Daily: 7:00 AM - 8:00 PM',
+    
+    // Cart
+    yourCart: 'Your Cart',
+    total: 'Total',
+    checkout: 'Checkout',
+    emptyCart: 'Your cart is empty',
+    remove: 'Remove',
+  },
+  ar: {
+    // Navigation
+    home: 'الرئيسية',
+    menu: 'القائمة',
+    about: 'من نحن',
+    contact: 'اتصل بنا',
+    cart: 'السلة',
+    
+    // Home Page
+    heroTitle: 'حلويات طازجة',
+    heroSubtitle: 'اكتشف مجموعتنا الحرفية من المعجنات والخبز والكعك المصنوع يدويًا',
+    shopNow: 'تسوق الآن',
+    featuredCategories: 'الفئات المميزة',
+    cakes: 'الكعك',
+    pastries: 'المعجنات',
+    coffee: 'القهوة',
+    
+    // Menu Page
+    menuTitle: 'القائمة',
+    addToCart: 'أضف إلى السلة',
+    menuSections: {
+      croissants: 'الكرواسون والمعجنات',
+      sandwiches: 'السندويتشات',
+      wraps: 'اللفائف',
+      panzini: 'البانزيني',
+      breads: 'الخبز',
+      cakes: 'الكعك والحلويات',
+      softDrinks: 'المشروبات الغازية',
+      hotDrinks: 'المشروبات الساخنة',
+      coldDrinks: 'المشروبات الباردة',
+      coffee: 'القهوة',
+      freshJuices: 'العصائر الطازجة'
+    },
+    menuItems: {
+      chocolateCroissant: 'كرواسون بالشوكولاتة',
+      almondDanish: 'دانش باللوز',
+      butterCroissant: 'كرواسون بالزبدة',
+      raspberryDanish: 'دانش بالتوت',
+      turkeyClub: 'سندويتش تركى',
+      hamCheese: 'سندويتش لحم وجبن',
+      veggieSandwich: 'سندويتش نباتي',
+      chickenCaesarWrap: 'لفافة دجاج قيصر',
+      falafelWrap: 'لفافة فلافل',
+      tunaWrap: 'لفافة تونة',
+      classicPanzini: 'بانزيني كلاسيكي',
+      cheesePanzini: 'بانزيني بالجبن',
+      sourdough: 'خبز حامض كلاسيكي',
+      wholeWheat: 'خبز قمح كامل',
+      baguette: 'باجيت',
+      strawberryCake: 'كعكة فراولة',
+      chocolateMousse: 'موس الشوكولاتة',
+      lemonTart: 'فطيرة الليمون',
+      cola: 'كولا',
+      lemonade: 'ليموناضة',
+      gingerAle: 'زنجبيل',
+      hotChocolate: 'شوكولاتة ساخنة',
+      herbalTea: 'شاي أعشاب',
+      icedLatte: 'لاتيه مثلج',
+      icedCoffee: 'قهوة مثلجة',
+      icedMocha: 'موكا مثلج',
+      espressoCapsules: 'كبسولات إسبريسو',
+      chocolateCoffee: 'قهوة بالشوكولاتة',
+      turkishCoffee: 'قهوة تركية',
+      frenchCoffee: 'قهوة فرنسية',
+      orangeJuice: 'عصير برتقال طازج',
+      watermelonJuice: 'عصير بطيخ',
+      lemonSparkling: 'ماء ليمون فوار'
+    },
+    
+    // About Page
+    aboutTitle: 'عن Sweet Delights',
+    ourStory: 'قصتنا',
+    ourValues: 'قيمنا',
+    ourTeam: 'فريقنا',
+    ourPromise: 'وعدنا',
+    storyContent: 'في Sweet Delights، نؤمن بفن الخبز التقليدي الممزوج بالإبداع الحديث. يقوم خبراء الخبز لدينا بصنع كل منتج بحب واهتمام بالتفاصيل، مستخدمين أفضل المكونات فقط.',
+    values: {
+      quality: 'مكونات عالية الجودة',
+      traditional: 'طرق تقليدية',
+      community: 'تركيز على المجتمع',
+      sustainability: 'استدامة'
+    },
+    teamContent: 'يجلب فريقنا من الخبازين وطهاة الحلويات ذوي الخبرة سنوات من الخبرة والشغف لإنشاء أفضل الحلويات لك.',
+    promises: [
+      'مكونات طازجة عالية الجودة',
+      'طرق خبز تقليدية',
+      'خدمة عملاء استثنائية',
+      'مشاركة مجتمعية'
+    ],
+    
+    // Contact Page
+    contactTitle: 'اتصل بنا',
+    getInTouch: 'تواصل معنا',
+    sendMessage: 'أرسل لنا رسالة',
+    name: 'الاسم',
+    email: 'البريد الإلكتروني',
+    message: 'الرسالة',
+    send: 'إرسال',
+    address: '١٢٣ شارع المخبز، مدينة الحلويات',
+    phone: '+١ ٢٣٤ ٥٦٧ ٨٩٠',
+    emailContact: 'contact@sweetdelights.com',
+    hours: 'مفتوح يومياً: ٧:٠٠ صباحاً - ٨:٠٠ مساءً',
+    
+    // Cart
+    yourCart: 'سلة المشتريات',
+    total: 'المجموع',
+    checkout: 'إتمام الشراء',
+    emptyCart: 'سلة المشتريات فارغة',
+    remove: 'حذف',
+  }
+}; 
